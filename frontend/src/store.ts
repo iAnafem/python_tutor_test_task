@@ -12,6 +12,7 @@ class ProductsInfoStore {
     });
   }
 
+
   fetch(url: string, handler: Function) {
     let headers = { "Content-Type": "application/json" };
     return fetch(url, {
@@ -24,8 +25,8 @@ class ProductsInfoStore {
       });
   }
 
-  setProductsInfoData(data: TProductsInfo) {
-    this.projectsInfo.push(data);
+  setProductsInfoData(data: TProductsInfo[]) {
+    this.projectsInfo = data;
   }
 }
 
