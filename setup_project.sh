@@ -42,11 +42,11 @@ sed -i "s&db_server&$db_server&g" docker-compose.dev.yml
 sed -i "s&- db_server&- $db_server&g" docker-compose.dev.yml
 
 
-mv ../django-react-project-template ../$project_name
+mv ../python_tutor_test_task ../$project_name
 
-grep -rli 'django-react-project-template' * | xargs -i@ sed -i "s/django-react-project-template/$project_name/g" @
+grep -rli 'python_tutor_test_task' * | xargs -i@ sed -i "s/python_tutor_test_task/$project_name/g" @
 
-grep -rli 'react_default_app' * | xargs -i@ sed -i "s/react_default_app/$project_name/g" @
+grep -rli 'python_tutor_test_task' * | xargs -i@ sed -i "s/python_tutor_test_task/$project_name/g" @
 
 
 cd frontend

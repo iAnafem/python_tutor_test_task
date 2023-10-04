@@ -2,27 +2,37 @@
 
 #### Clone repository and go to project folder:
 
-git clone https://github.com/iAnafem/django-react-project-template <br />
-cd django-react-project-template
+> git clone https://github.com/iAnafem/python_tutor_test_task <br />
+
+> cd python_tutor_test_task
 
 #### Install necessary dependencies
 If you don't have docker, docker-compose, python3.11:
 
-sudo ./install_dependencies.sh
+> sudo ./install_dependencies.sh
 
-#### Launch setup_project.sh
+#### Launch project
 
-##### Usage example: <br />
+> sudo ./up.sh
 
-sudo ./setup_project.sh -n <project_name> -d <db_name> -P <db_public_port> -u <db_user> -p <db_password> -s <db_server> -k <secret_key>
+This script does the following steps:
+- builds and starts containers;
+- migrates django models into database;
+- fills database tables with test data;
 
-##### Access to postgres cli: <br />
-"docker-compose exec <db_container_name> psql -h <db_host> -U <db_user> --dbname=<db_name>"
 
-##### Frontend server: 
-localhost:3001
+##### Project usage: <br />
 
-##### Backend server: 
-localhost:8999
+Credentials for [Admin Panel](localhost:8999/api/admin/):
+- login: admin
+- password: admin
 
-Everything is ready for development!
+Endpoint to get products info in the Django rest framework representation: 
+- [click here](localhost:8999/api/admin/):
+- or paste this url into your browser
+> localhost:8999/api/admin/
+
+Endpoint to get products-info via frontend server: 
+- [click here](localhost:3001)
+- or paste this url into your browser:
+> localhost:8999/api/admin/

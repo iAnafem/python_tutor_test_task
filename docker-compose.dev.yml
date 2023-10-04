@@ -13,7 +13,7 @@ services:
     ports:
       - "8999:8999"
     depends_on:
-      - db_server
+      - postgres
 
   frontend:
     build:
@@ -27,7 +27,7 @@ services:
     depends_on:
       - backend
 
-  db_server:
+  postgres:
     image: postgres:14
     restart: always
     volumes:
@@ -35,7 +35,7 @@ services:
     env_file:
       - ./backend/config/.env
     ports:
-      - "db_port:5432"
+      - "5432:5432"
 
 volumes:
   postgres_data:
