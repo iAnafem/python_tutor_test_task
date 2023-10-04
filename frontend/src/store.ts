@@ -1,29 +1,16 @@
-import { action, autorun, computed, makeObservable, observable } from "mobx";
-import { autoAction } from "mobx/dist/api/action";
+import { action, autorun, makeObservable, observable } from "mobx";
+import {TProductsInfo} from "./types";
 
-class TestStore {
-  backendMsgs: string[] = [];
-  dbMsgs: string[] = [];
+class ProductsInfoStore {
+  projectsInfo: TProductsInfo[] = [];
 
   constructor() {
     makeObservable(this, {
-      backendMsgs: observable,
-      dbMsgs: observable,
-      storeDetails: computed,
+      projectsInfo: observable,
       fetch: action.bound,
-      setBackendMsg: action.bound,
-      setDbMsg: action.bound,
+      setProductsInfoData: action.bound,
     });
-    autorun(this.logStoreDetails);
   }
-
-  get storeDetails() {
-    return `We have ${this.backendMsgs.length} msgs from backend and ${this.dbMsgs.length} msgs from db, so far!!!`;
-  }
-
-  logStoreDetails = () => {
-    console.log(this.storeDetails);
-  };
 
   fetch(url: string, handler: Function) {
     let headers = { "Content-Type": "application/json" };
@@ -37,15 +24,11 @@ class TestStore {
       });
   }
 
-  setBackendMsg(msg: string) {
-    this.backendMsgs.push(msg);
-  }
-
-  setDbMsg(msg: string) {
-    this.dbMsgs.push(msg);
+  setProductsInfoData(data: TProductsInfo) {
+    this.projectsInfo.push(data);
   }
 }
 
-const instance = new TestStore();
+const instance = new ProductsInfoStore();
 
 export default instance;
