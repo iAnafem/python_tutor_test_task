@@ -21,18 +21,16 @@ This script does the following steps:
 - fills database tables with test data;
 
 
-##### Project usage: <br />
+##### Project usage: 
+Url for the admin panel:
+> localhost:8999/api/admin/
 
-Credentials for [Admin Panel](localhost:8999/api/admin/):
+Credentials:
 - login: admin
 - password: admin
 
 Endpoint to get products info in the Django rest framework representation: 
-- [click here](localhost:8999/api/admin/):
-- or paste this url into your browser
 > localhost:8999/api/admin/
 
 Endpoint to get products-info via frontend server: 
-- [click here](localhost:3001)
-- or paste this url into your browser:
-> localhost:8999/api/admin/
+> localhost:3001
