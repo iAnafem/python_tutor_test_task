@@ -1,3 +1,7 @@
 body {
   color: darkblue;
 }
+* {
+    box-sizing: border-box;
+}
+
