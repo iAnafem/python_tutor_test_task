@@ -13,6 +13,7 @@ If you don't have docker, docker-compose, python3.11:
 
 #### Launch project
 
+> sudo chmod +x up.sh
 > sudo ./up.sh
 
 This script does the following steps:
