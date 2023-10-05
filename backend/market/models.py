@@ -89,7 +89,7 @@ class Order(TimestampsMixin):
     products = models.ManyToManyField(to=Product)
 
     def __str__(self) -> str:
-        return f"Order id: {self.id}, customer: {self.customer.email}"
+        return f"Order id: {self.id}, customer: {self.customer.get_full_name()}"
 
     def __repr__(self) -> str:
         return self.__str__()

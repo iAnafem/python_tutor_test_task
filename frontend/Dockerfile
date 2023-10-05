@@ -2,7 +2,7 @@
 FROM node:latest
 
 RUN npm install webpack -g
-RUN npm install webpack-cli -g
+RUN npm install webpack-cli webpack-dev-server -g
 
 RUN mkdir /frontend
 
